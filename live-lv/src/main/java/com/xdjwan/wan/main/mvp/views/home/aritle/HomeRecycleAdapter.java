@@ -73,7 +73,6 @@ public class HomeRecycleAdapter extends BaseQuickAdapter<MultipleItemEntity, Bas
                     //打开新的fragment，传入页码和superChapterID
                     int superChapterID = ((MultipleItemEntity) adapter.getData().get(position)).getField(AritleDatasMultipleFields.SUPERCHAPTERID);
                     DELEGATE.getSupportDelegate().start(AritleSortFragment.create(0, superChapterID));
-
                 } else if (i == R.id.id_home_item_chapterName) {
                     //打开新的fragment，传入页码和chapterID
                     int chapterID = ((MultipleItemEntity) adapter.getData().get(position)).getField(AritleDatasMultipleFields.CHAPTERID);
@@ -85,7 +84,6 @@ public class HomeRecycleAdapter extends BaseQuickAdapter<MultipleItemEntity, Bas
                     if (SPUtils.getInstance(Constant.LOGIN_SPNAME).getBoolean(Constant.LOGIN_IS)) {
                         boolean isCollect = multipleItemEntity.getField(AritleDatasMultipleFields.COLLECT);
                         if (!isCollect) {
-
                             //执行同步操作
                             Collect.create().collectAritle((Integer) multipleItemEntity.getField(AritleDatasMultipleFields.ID), new Collect.ICollect() {
                                 @Override
@@ -108,7 +106,6 @@ public class HomeRecycleAdapter extends BaseQuickAdapter<MultipleItemEntity, Bas
                                     if (is) {
                                         multipleItemEntity.setField(AritleDatasMultipleFields.COLLECT, false);
                                         notifyItemChanged(position);
-                                        //tv_collect.setBackgroundColor(Color.GRAY);
                                     } else {
                                         Toast.makeText(DELEGATE.getContext(), "取消失败:" + msg, Toast.LENGTH_SHORT).show();
                                     }
