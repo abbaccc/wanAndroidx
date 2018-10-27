@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/blueAir"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/id_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@mipmap/pic_back" />
+
+            <TextView
+                android:id="@+id/id_knowledge_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/id_back"
+                android:text="知识"
+                android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/id_knowledge_search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:background="@mipmap/pic_search" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/id_knowledge_item_tab"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        app:tabGravity="center"
+        app:tabIndicatorColor="@color/blueAir"
+        app:tabIndicatorHeight="1.25dp"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/blueAir" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/id_knowledge_item_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

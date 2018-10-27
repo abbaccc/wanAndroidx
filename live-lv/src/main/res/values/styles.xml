@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="loginEdiText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="android:colorControlActivated">@color/blueAir</item>
+    </style>
+
+    <style name="TextInputAppTheme" parent="Base.TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@color/blueAir</item>
+    </style>
+</resources>
