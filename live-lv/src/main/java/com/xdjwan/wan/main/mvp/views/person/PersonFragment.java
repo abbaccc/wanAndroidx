@@ -41,6 +41,9 @@ public class PersonFragment extends WanAdFragment {
     public void initUI() {
         setLogin();
         collectClick();
+        todoClick();
+        settingClick();
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -128,6 +131,24 @@ public class PersonFragment extends WanAdFragment {
 
     private void collectClick() {
         ln_collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+    private void todoClick() {
+        ln_todo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+    private void settingClick() {
+        ln_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
