@@ -5,8 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/live-core/live-core.iml" filepath="$PROJECT_DIR$/live-core/live-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/live-lv/live-lv.iml" filepath="$PROJECT_DIR$/live-lv/live-lv.iml" />
-      <module fileurl="file://$PROJECT_DIR$/live-master.iml" filepath="$PROJECT_DIR$/live-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/live-ui/live-ui.iml" filepath="$PROJECT_DIR$/live-ui/live-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xdjWanAndroid.iml" filepath="$PROJECT_DIR$/xdjWanAndroid.iml" />
     </modules>
   </component>
 </project>

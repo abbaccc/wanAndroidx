@@ -146,19 +146,6 @@ public class LoginFragment extends WanAdFragment {
                         })
                         .build()
                         .post();
-//                        .subscribe(new Consumer<String>() {
-//                            @Override
-//                            public void accept(String s) throws Exception {
-//                                Log.d("LoginFragment", s);
-//                                loginSet(s);
-//                            }
-//                        }, new Consumer<Throwable>() {
-//                            @Override
-//                            public void accept(Throwable throwable) throws Exception {
-//
-//                            }
-//                        });
-
             }
         });
 
