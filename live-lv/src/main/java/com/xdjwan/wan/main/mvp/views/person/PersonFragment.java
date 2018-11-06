@@ -40,6 +40,7 @@ public class PersonFragment extends WanAdFragment {
     @Override
     public void initUI() {
         setLogin();
+        collectClick();
     }
 
     @SuppressLint("SetTextI18n")
@@ -123,6 +124,15 @@ public class PersonFragment extends WanAdFragment {
         if (userName != null) {
             tv_name.setText(userName.getUserName() + "");
         }
+    }
+
+    private void collectClick() {
+        ln_collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
 
