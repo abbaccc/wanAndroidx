@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.xdjcore.core.net.HttpMethod;
 import com.xdjcore.core.net.RestCreator;
+import com.xdjcore.core.net.rx.Exception.Response;
 import com.xdjcore.core.ui.lorder.LatteLoader;
 import com.xdjcore.core.ui.lorder.LoaderStyle;
 
@@ -15,7 +16,6 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-
 
 
 public final class RxRestClient {
@@ -45,9 +45,9 @@ public final class RxRestClient {
         return new RxRestClientBuilder();
     }
 
-    private Observable<String> request(HttpMethod method) {
+    private Observable<Response<String>> request(HttpMethod method) {
         final RxRestService service = RestCreator.getRxRestService();
-        Observable<String> observable = null;
+        Observable<Response<String>> observable = null;
 
         if (LOADER_STYLE != null) {
             LatteLoader.showLoading(CONTEXT, LOADER_STYLE);
@@ -82,15 +82,14 @@ public final class RxRestClient {
             default:
                 break;
         }
-
         return observable;
     }
 
-    public final Observable<String> get() {
+    public final Observable<Response<String>> get() {
         return request(HttpMethod.GET);
     }
 
-    public final Observable<String> post() {
+    public final Observable<Response<String>> post() {
         if (BODY == null) {
             return request(HttpMethod.POST);
         } else {
@@ -101,7 +100,7 @@ public final class RxRestClient {
         }
     }
 
-    public final Observable<String> put() {
+    public final Observable<Response<String>> put() {
         if (BODY == null) {
             return request(HttpMethod.PUT);
         } else {
@@ -112,11 +111,11 @@ public final class RxRestClient {
         }
     }
 
-    public final Observable<String> delete() {
+    public final Observable<Response<String>> delete() {
         return request(HttpMethod.DELETE);
     }
 
-    public final Observable<String> upload() {
+    public final Observable<Response<String>> upload() {
         return request(HttpMethod.UPLOAD);
     }
 

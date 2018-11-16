@@ -188,8 +188,6 @@ public abstract class BaseDelegate extends Fragment implements ISupportFragment 
 
 
     //设置状态栏
-
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

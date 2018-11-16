@@ -1,5 +1,7 @@
 package com.xdjcore.core.net.rx;
 
+import com.xdjcore.core.net.rx.Exception.Response;
+
 import java.util.WeakHashMap;
 
 import io.reactivex.Observable;
@@ -22,24 +24,24 @@ import retrofit2.http.Url;
 public interface RxRestService {
 
     @GET
-    Observable<String> get(@Url String url, @QueryMap WeakHashMap<String, Object> params);
+    Observable<Response<String>> get(@Url String url, @QueryMap WeakHashMap<String, Object> params);
 
     @FormUrlEncoded
     @POST
-    Observable<String> post(@Url String url, @FieldMap WeakHashMap<String, Object> params);
+    Observable<Response<String>> post(@Url String url, @FieldMap WeakHashMap<String, Object> params);
 
     @POST
-    Observable<String> postRaw(@Url String url, @Body RequestBody body);
+    Observable<Response<String>> postRaw(@Url String url, @Body RequestBody body);
 
     @FormUrlEncoded
     @PUT
-    Observable<String> put(@Url String url, @FieldMap WeakHashMap<String, Object> params);
+    Observable<Response<String>> put(@Url String url, @FieldMap WeakHashMap<String, Object> params);
 
     @PUT
-    Observable<String> putRaw(@Url String url, @Body RequestBody body);
+    Observable<Response<String>> putRaw(@Url String url, @Body RequestBody body);
 
     @DELETE
-    Observable<String> delete(@Url String url, @QueryMap WeakHashMap<String, Object> params);
+    Observable<Response<String>> delete(@Url String url, @QueryMap WeakHashMap<String, Object> params);
 
     @Streaming
     @GET
@@ -47,5 +49,5 @@ public interface RxRestService {
 
     @Multipart
     @POST
-    Observable<String> upload(@Url String url, @Part MultipartBody.Part file);
+    Observable<Response<String>> upload(@Url String url, @Part MultipartBody.Part file);
 }

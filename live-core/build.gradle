@@ -62,6 +62,9 @@ dependencies {
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     //RecyclerView 分割线
     api 'com.choices.divider:RecyclerView_Divider:1.0.0'
+    // 必要rxjava2依赖
+    api "io.reactivex.rxjava2:rxjava:2.2.3"
+    api "io.reactivex.rxjava2:rxandroid:2.1.0" // 必要rxandrroid依赖，切线程时需要用到
     //retrofit2
     api 'com.squareup.retrofit2:retrofit:2.4.0'
     api 'com.squareup.retrofit2:converter-gson:2.4.0'

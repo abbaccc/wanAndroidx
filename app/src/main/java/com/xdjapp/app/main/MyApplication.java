@@ -14,7 +14,7 @@ import me.yokeyword.fragmentation.Fragmentation;
  * Created by jx on 2018/5/3.
  */
 
-public class MyAppLication extends Application {
+public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
