@@ -60,7 +60,6 @@ public class KonwledgeItemFragment extends WanAdFragment {
 
 
 
-
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, @NonNull View rootView) {
         EventBus.getDefault().register(this);

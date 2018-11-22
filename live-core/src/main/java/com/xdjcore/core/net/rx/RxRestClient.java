@@ -2,6 +2,7 @@ package com.xdjcore.core.net.rx;
 
 import android.content.Context;
 
+import com.xdjcore.core.net.Entity.myBanners;
 import com.xdjcore.core.net.HttpMethod;
 import com.xdjcore.core.net.RestCreator;
 import com.xdjcore.core.net.rx.Exception.Response;
@@ -9,6 +10,7 @@ import com.xdjcore.core.ui.lorder.LatteLoader;
 import com.xdjcore.core.ui.lorder.LoaderStyle;
 
 import java.io.File;
+import java.util.List;
 import java.util.WeakHashMap;
 
 import io.reactivex.Observable;
@@ -84,6 +86,13 @@ public final class RxRestClient {
         }
         return observable;
     }
+
+
+    public final Observable<Response<List<myBanners>>> getBanner() {
+        final RxRestService service = RestCreator.getRxRestService();
+        return service.getBanner(URL, PARAMS);
+    }
+
 
     public final Observable<Response<String>> get() {
         return request(HttpMethod.GET);

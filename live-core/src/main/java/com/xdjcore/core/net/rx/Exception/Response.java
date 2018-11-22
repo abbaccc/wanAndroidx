@@ -1,22 +1,30 @@
 package com.xdjcore.core.net.rx.Exception;
 
+import java.util.List;
+
 /**
  * Created by Zaifeng on 2018/2/28.
  * 返回结果封装
  */
 
 public class Response<T> {
+//
+//    {
+//        "data": ...,
+//        "errorCode": 0,
+//            "errorMsg": ""
+//    }
 
-    private int ret; // 返回的code
+    private int errorCode; // 返回的code
     private T data; // 具体的数据结果
-    private String msg; // message 可用来返回接口的说明
+    private String errorMsg; // message 可用来返回接口的说明
 
     public int getCode() {
-        return ret;
+        return errorCode;
     }
 
     public void setCode(int code) {
-        this.ret = code;
+        this.errorCode = code;
     }
 
     public T getData() {
@@ -28,10 +36,10 @@ public class Response<T> {
     }
 
     public String getMsg() {
-        return msg;
+        return errorMsg;
     }
 
     public void setMsg(String msg) {
-        this.msg = msg;
+        this.errorMsg = msg;
     }
 }

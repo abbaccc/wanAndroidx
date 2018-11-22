@@ -9,9 +9,11 @@ import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.alibaba.fastjson.JSON;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -35,7 +37,7 @@ import java.util.List;
 
 
 public class HomeFragment extends MvpBaseFragment<I_Home, HomePrecenter> implements I_Home {
-    private Toolbar toolbar;
+    private LinearLayout bannerLayout;
     private Banner banner;
     private RecyclerView rlv;
     private RefreshLayout smartRefreshLayout;
@@ -49,8 +51,6 @@ public class HomeFragment extends MvpBaseFragment<I_Home, HomePrecenter> impleme
     }
 
     private void initView(@NonNull View rootView) {
-        toolbar = rootView.findViewById(R.id.tb_index);
-        banner = rootView.findViewById(R.id.id_home_banner);
         rlv = rootView.findViewById(R.id.id_home_rlv);
         smartRefreshLayout = rootView.findViewById(R.id.refreshLayout);
         ed_search = rootView.findViewById(R.id.et_search_view);
@@ -118,8 +118,14 @@ public class HomeFragment extends MvpBaseFragment<I_Home, HomePrecenter> impleme
         rlv.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         rlv.addItemDecoration(BaseDecoration.create(ContextCompat.getColor(getContext(), R.color.we_chat_black), 2));
         //
-        refreshHandler = AritleRefreshHandler.create(smartRefreshLayout, rlv, getParentDelegate()
-                , new HomeRecycleAdapter(R.layout.item_home_aritle, new ArrayList<MultipleItemEntity>(), getParentDelegate()));
+        HomeRecycleAdapter homeRecycleAdapter = new HomeRecycleAdapter(R.layout.item_home_aritle, new ArrayList<MultipleItemEntity>(), getParentDelegate());
+        refreshHandler = AritleRefreshHandler.create(smartRefreshLayout, rlv, getParentDelegate(), homeRecycleAdapter);
+        //设置banner到RecycleView的头
+        bannerLayout = (LinearLayout) getLayoutInflater().inflate(R.layout.item_home_banner, null);
+        banner = (Banner) bannerLayout.getChildAt(0);
+        homeRecycleAdapter.setHeaderView(bannerLayout);
+
+
         //
         initRefreshLayoutClick();
 
